@@ -386,6 +386,7 @@ const Home = () => {
         {/* Hero Section with Background Image */}
         <div style={{
           height: "100vh",
+          paddingTop: "60px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -472,7 +473,7 @@ const Home = () => {
               backdropFilter: "blur(10px)",
               border: "1px solid gold",
               borderRadius: "30px",
-              marginBottom: "30px",
+              marginBottom: "10px",
               opacity: showContent ? 1 : 0,
               animation: showContent ? "slideInUp 1s ease forwards" : "none"
             }}>
@@ -484,7 +485,7 @@ const Home = () => {
               fontSize: "clamp(3rem, 12vw, 7rem)",
               fontWeight: "800",
               lineHeight: "1.1",
-              marginBottom: "20px",
+              marginBottom: "10px",
               opacity: showContent ? 1 : 0,
               animation: showContent ? "slideInLeft 1s ease 0.2s forwards" : "none",
               textShadow: "2px 2px 4px rgba(0,0,0,0.5)"
@@ -502,7 +503,7 @@ const Home = () => {
             {/* Typewriter Effect */}
             <div className="typewriter" style={{
               maxWidth: "fit-content",
-              margin: "30px auto"
+              margin: "10px auto"
             }}>
               <h1 style={{
                 fontSize: "clamp(1rem, 4vw, 1.8rem)",
@@ -517,7 +518,7 @@ const Home = () => {
               display: "flex",
               justifyContent: "center",
               gap: "40px",
-              margin: "50px 0",
+              margin: "30px 0",
               flexWrap: "wrap",
               opacity: showContent ? 1 : 0,
               animation: showContent ? "fadeIn 1s ease 0.8s forwards" : "none"
