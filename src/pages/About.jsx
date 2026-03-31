@@ -158,7 +158,7 @@ const About = () => {
       fontFamily: "'Poppins', sans-serif",
       background: "#0a0a0a",
       color: "white",
-      overflow: "hidden",
+      overflowX: "hidden",
       position: "relative",
       minHeight: "100vh"
     }}>
@@ -428,24 +428,25 @@ const About = () => {
       <div style={{
         position: "relative",
         zIndex: 1,
-        padding: "100px 20px 50px"
+        minHeight: "100vh"
       }}>
-        {/* Hero Section with Background Image */}
+        {/* Hero Section with Full Width Background Image */}
         <div style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-          textAlign: "center",
-          marginBottom: "80px",
           position: "relative",
-          padding: "80px 40px",
-          borderRadius: "50px",
+          width: "100%",
+          minHeight: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
           overflow: "hidden"
         }}>
-          {/* Hero Background Image */}
+          {/* Full Width Background Image */}
           <div className="hero-background" style={{
             position: "absolute",
             top: 0,
             left: 0,
+            right: 0,
+            bottom: 0,
             width: "100%",
             height: "100%",
             backgroundImage: "url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1920&h=1080&fit=crop')",
@@ -461,6 +462,8 @@ const About = () => {
               position: "absolute",
               top: 0,
               left: 0,
+              right: 0,
+              bottom: 0,
               width: "100%",
               height: "100%",
               background: "linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.85) 100%)"
@@ -471,6 +474,11 @@ const About = () => {
           <div style={{
             position: "relative",
             zIndex: 2,
+            maxWidth: "1200px",
+            width: "100%",
+            margin: "0 auto",
+            textAlign: "center",
+            padding: "100px 20px",
             transform: `translate(${mousePosition.x * 0.2}px, ${mousePosition.y * 0.2}px)`,
             transition: "transform 0.1s ease-out"
           }}>
@@ -571,12 +579,29 @@ const About = () => {
               ))}
             </div>
           </div>
+
+          {/* Scroll Indicator */}
+          <div className="floating-element" style={{
+            position: "absolute",
+            bottom: "30px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            color: "white",
+            fontSize: "0.8rem",
+            letterSpacing: "2px",
+            writingMode: "vertical-rl",
+            opacity: 0.5,
+            zIndex: 2
+          }}>
+            SCROLL
+          </div>
         </div>
 
         {/* Our Values Section with Images */}
         <div ref={sectionRef} style={{
           maxWidth: "1200px",
-          margin: "0 auto 80px"
+          margin: "80px auto 80px",
+          padding: "0 20px"
         }}>
           <h2 style={{
             textAlign: "center",
@@ -690,7 +715,8 @@ const About = () => {
         {/* Milestones Timeline with Images */}
         <div style={{
           maxWidth: "1200px",
-          margin: "0 auto 80px"
+          margin: "0 auto 80px",
+          padding: "0 20px"
         }}>
           <h2 style={{
             textAlign: "center",
@@ -765,7 +791,8 @@ const About = () => {
         {/* Team Section with Images */}
         <div style={{
           maxWidth: "1200px",
-          margin: "0 auto 80px"
+          margin: "0 auto 80px",
+          padding: "0 20px"
         }}>
           <h2 style={{
             textAlign: "center",
@@ -945,7 +972,7 @@ const About = () => {
         {/* CTA Section with Image */}
         <div style={{
           maxWidth: "800px",
-          margin: "0 auto",
+          margin: "0 auto 80px",
           textAlign: "center",
           padding: "60px 20px",
           background: "linear-gradient(135deg, rgba(255,215,0,0.1), transparent)",
