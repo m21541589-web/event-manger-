@@ -21,8 +21,8 @@ const Footer = () => {
   ];
 
   const contactInfo = [
-    { icon: "📍", text: "123 Event Street, New York, NY 10001" },
-    { icon: "📞", text: "+1 (555) 123-4567" },
+    { icon: "📍", text: "Bangla Gogera, Okara,Punjab,Pakistan" },
+    { icon: "📞", text: "03466614399" },
     { icon: "✉️", text: "info@eliteevents.com" },
     { icon: "🌐", text: "www.eliteevents.com" }
   ];
@@ -650,7 +650,7 @@ const Footer = () => {
                 }}>
                   <span style={{ color: "gold" }}>24/7 Emergency Support</span>
                   <br />
-                  <span style={{ color: "#999", fontSize: "1.2rem", fontWeight: "bold" }}>+1 (555) 999-8888</span>
+                  <span style={{ color: "#999", fontSize: "1.2rem", fontWeight: "bold" }}>03466614399</span>
                 </li>
               </ul>
             </div>

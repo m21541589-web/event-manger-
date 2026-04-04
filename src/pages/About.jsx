@@ -82,73 +82,92 @@ const About = () => {
 
   const teamMembers = [
     {
-      name: "Sarah Johnson",
+      name: "Rai Mudassar",
       role: "Founder & CEO",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
+      image: "/ceo mudassar.png",
       bio: "15+ years in luxury event planning",
-      social: { linkedin: "#", twitter: "#", email: "#" }
+      social: { linkedin: "#", twitter: "#", email: "#" },
+      icon: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
     },
     {
-      name: "Michael Chen",
+      name: "Nawazish Ali",
       role: "Creative Director",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+      image: "/mrali.jpeg",
       bio: "Award-winning event designer",
-      social: { linkedin: "#", twitter: "#", email: "#" }
+      social: { linkedin: "#", twitter: "#", email: "#" },
+      icon: "https://cdn-icons-png.flaticon.com/512/1827/1827372.png"
     },
     {
-      name: "Emma Williams",
+      name: "Ajmal Hassan",
       role: "Operations Manager",
-      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=400&fit=crop",
+      image: "/mrali6.jpeg",
       bio: "Expert in flawless execution",
-      social: { linkedin: "#", twitter: "#", email: "#" }
+      social: { linkedin: "#", twitter: "#", email: "#" },
+      icon: "https://cdn-icons-png.flaticon.com/512/1903/1903317.png"
     },
     {
-      name: "David Brown",
+      name: "Irfan Kharal",
       role: "Lead Coordinator",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
+      image: "/fani pic.jpeg",
       bio: "Specialist in corporate events",
-      social: { linkedin: "#", twitter: "#", email: "#" }
+      social: { linkedin: "#", twitter: "#", email: "#" },
+      icon: "https://cdn-icons-png.flaticon.com/512/2972/2972615.png"
     }
   ];
 
   const milestones = [
-    { year: "2012", title: "Company Founded", icon: "https://cdn-icons-png.flaticon.com/512/3095/3095110.png", desc: "Started with a vision" },
-    { year: "2015", title: "100+ Events", icon: "https://cdn-icons-png.flaticon.com/512/1041/1041918.png", desc: "Reached major milestone" },
-    { year: "2018", title: "International Expansion", icon: "https://cdn-icons-png.flaticon.com/512/1150/1150348.png", desc: "Opened NYC office" },
-    { year: "2020", title: "Virtual Events", icon: "https://cdn-icons-png.flaticon.com/512/2920/2920277.png", desc: "Adapted to new normal" },
-    { year: "2022", title: "Award Winning", icon: "https://cdn-icons-png.flaticon.com/512/2583/2583197.png", desc: "Best Event Company" },
-    { year: "2024", title: "Global Recognition", icon: "https://cdn-icons-png.flaticon.com/512/1828/1828884.png", desc: "Top 10 Event Planners" }
+    { year: "2012", title: "Company Founded", icon: "https://cdn-icons-png.flaticon.com/512/3095/3095110.png", desc: "Started with a vision", image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=400&h=300&fit=crop" },
+    { year: "2015", title: "100+ Events", icon: "https://cdn-icons-png.flaticon.com/512/1041/1041918.png", desc: "Reached major milestone", image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=300&fit=crop" },
+    { year: "2018", title: "International Expansion", icon: "https://cdn-icons-png.flaticon.com/512/1150/1150348.png", desc: "Opened NYC office", image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=400&h=300&fit=crop" },
+    { year: "2020", title: "Virtual Events", icon: "https://cdn-icons-png.flaticon.com/512/2920/2920277.png", desc: "Adapted to new normal", image: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=400&h=300&fit=crop" },
+    { year: "2022", title: "Award Winning", icon: "https://cdn-icons-png.flaticon.com/512/2583/2583197.png", desc: "Best Event Company", image: "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=400&h=300&fit=crop" },
+    { year: "2024", title: "Global Recognition", icon: "https://cdn-icons-png.flaticon.com/512/1828/1828884.png", desc: "Top 10 Event Planners", image: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=400&h=300&fit=crop" }
   ];
 
   const values = [
-    { icon: "https://cdn-icons-png.flaticon.com/512/1827/1827372.png", title: "Excellence", desc: "We never compromise on quality" },
-    { icon: "https://cdn-icons-png.flaticon.com/512/1903/1903317.png", title: "Integrity", desc: "Honest and transparent dealings" },
-    { icon: "https://cdn-icons-png.flaticon.com/512/1164/1164156.png", title: "Innovation", desc: "Creative solutions for every event" },
-    { icon: "https://cdn-icons-png.flaticon.com/512/864/864350.png", title: "Passion", desc: "We love what we do" }
+    { icon: "https://cdn-icons-png.flaticon.com/512/1827/1827372.png", title: "Excellence", desc: "We never compromise on quality", image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=300&fit=crop" },
+    { icon: "https://cdn-icons-png.flaticon.com/512/1903/1903317.png", title: "Integrity", desc: "Honest and transparent dealings", image: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=400&h=300&fit=crop" },
+    { icon: "https://cdn-icons-png.flaticon.com/512/1164/1164156.png", title: "Innovation", desc: "Creative solutions for every event", image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=400&h=300&fit=crop" },
+    { icon: "https://cdn-icons-png.flaticon.com/512/864/864350.png", title: "Passion", desc: "We love what we do", image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=300&fit=crop" }
   ];
 
   const testimonials = [
     {
       quote: "Elite Events transformed our wedding into a fairytale. Every detail was perfect!",
-      author: "Sarah & Michael",
+      author: "Ajmal Hassan",
       role: "Wedding Clients",
       rating: 5,
       image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=300&fit=crop"
     },
     {
       quote: "The most professional team we've ever worked with. Highly recommended!",
-      author: "James Wilson",
+      author: "Rai Mudassar",
       role: "CEO, TechCorp",
       rating: 5,
       image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=300&fit=crop"
     },
     {
       quote: "They handled our corporate gala flawlessly. 500+ guests and everything went smoothly.",
-      author: "Lisa Anderson",
+      author: "Nawazish Ali",
       role: "Event Director",
       rating: 5,
       image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=400&h=300&fit=crop"
     }
+  ];
+
+  const counterStats = [
+    { label: "Events Managed", value: counts.events, icon: "https://cdn-icons-png.flaticon.com/512/1041/1041918.png", suffix: "+" },
+    { label: "Happy Clients", value: counts.clients, icon: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png", suffix: "+" },
+    { label: "Team Members", value: counts.members, icon: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png", suffix: "+" },
+    { label: "Years Experience", value: counts.years, icon: "https://cdn-icons-png.flaticon.com/512/1828/1828884.png", suffix: "+" },
+    { label: "Satisfaction", value: counts.satisfaction, icon: "https://cdn-icons-png.flaticon.com/512/2583/2583197.png", suffix: "%" },
+    { label: "Partners", value: counts.partners, icon: "https://cdn-icons-png.flaticon.com/512/1903/1903317.png", suffix: "+" }
+  ];
+
+  const heroStats = [
+    { label: "Years", value: counts.years, icon: "https://cdn-icons-png.flaticon.com/512/1828/1828884.png" },
+    { label: "Events", value: counts.events, icon: "https://cdn-icons-png.flaticon.com/512/1041/1041918.png" },
+    { label: "Clients", value: counts.clients, icon: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png" }
   ];
 
   return (
@@ -316,35 +335,6 @@ const About = () => {
             animation: pulse 1s ease infinite;
           }
 
-          .milestone-line {
-            position: relative;
-          }
-
-          .milestone-line::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, transparent, gold, transparent);
-            transform: translateX(-50%);
-          }
-
-          .tab-button {
-            transition: all 0.3s ease;
-          }
-
-          .tab-button:hover {
-            background: gold;
-            color: black;
-          }
-
-          .tab-button.active {
-            background: gold;
-            color: black;
-          }
-
           .counter-number {
             background: linear-gradient(135deg, gold, #ffa500);
             -webkit-background-clip: text;
@@ -404,31 +394,51 @@ const About = () => {
         {/* Decorative Circles */}
         <div className="rotating-element" style={{
           position: "absolute",
-          width: "600px",
-          height: "600px",
+          width: "800px",
+          height: "800px",
           border: "2px solid rgba(255,215,0,0.05)",
           borderRadius: "50%",
           left: "-200px",
-          top: "-100px"
+          top: "-200px"
         }}></div>
 
         <div className="rotating-element" style={{
           position: "absolute",
-          width: "400px",
-          height: "400px",
+          width: "600px",
+          height: "600px",
           border: "2px solid rgba(255,215,0,0.05)",
           borderRadius: "50%",
           right: "-100px",
-          bottom: "-50px",
+          bottom: "-100px",
           animationDirection: "reverse"
+        }}></div>
+
+        {/* Geometric Shapes */}
+        <div className="floating-element" style={{
+          position: "absolute",
+          width: "300px",
+          height: "300px",
+          border: "1px solid rgba(255,215,0,0.1)",
+          transform: "rotate(45deg)",
+          left: "5%",
+          top: "20%"
+        }}></div>
+
+        <div className="floating-reverse" style={{
+          position: "absolute",
+          width: "200px",
+          height: "200px",
+          border: "1px solid rgba(255,215,0,0.1)",
+          transform: "rotate(30deg)",
+          right: "10%",
+          bottom: "30%"
         }}></div>
       </div>
 
       {/* Main Content */}
       <div style={{
         position: "relative",
-        zIndex: 1,
-        minHeight: "100vh"
+        zIndex: 1
       }}>
         {/* Hero Section with Full Width Background Image */}
         <div style={{
@@ -484,9 +494,10 @@ const About = () => {
           }}>
             {/* Hero Image */}
             <div className="hero-image" style={{
-              width: "200px",
-              height: "200px",
+              width: "180px",
+              height: "180px",
               margin: "0 auto 30px",
+              marginTop:"60px",
               borderRadius: "50%",
               overflow: "hidden",
               border: "3px solid gold",
@@ -508,21 +519,21 @@ const About = () => {
             {/* Animated Badge */}
             <div className="floating-element" style={{
               display: "inline-block",
-              padding: "8px 25px",
+              padding: "10px 30px",
               background: "rgba(255,215,0,0.2)",
               backdropFilter: "blur(10px)",
               border: "1px solid gold",
-              borderRadius: "30px",
+              borderRadius: "40px",
               marginBottom: "30px"
             }}>
-              <span style={{ color: "gold", letterSpacing: "2px" }}>✦ SINCE 2012 ✦</span>
+              <span style={{ color: "gold", letterSpacing: "2px" }}>✦ ABOUT ELITE EVENTS ✦</span>
             </div>
 
             {/* Title with Gradient */}
             <h1 style={{
               fontSize: "clamp(2.5rem, 8vw, 5rem)",
               fontWeight: "800",
-              marginBottom: "30px",
+              marginBottom: "20px",
               lineHeight: "1.2",
               textShadow: "2px 2px 4px rgba(0,0,0,0.5)"
             }}>
@@ -541,7 +552,7 @@ const About = () => {
               color: "#ccc",
               fontSize: "1.2rem",
               lineHeight: "1.8",
-              marginBottom: "50px",
+              marginBottom: "40px",
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? "translateY(0)" : "translateY(30px)",
               transition: "all 1s ease",
@@ -552,7 +563,7 @@ const About = () => {
               delivering world-class events from luxury weddings to corporate galas.
             </p>
 
-            {/* Stats Row */}
+            {/* Stats Row with Images */}
             <div style={{
               display: "flex",
               justifyContent: "center",
@@ -560,21 +571,18 @@ const About = () => {
               flexWrap: "wrap",
               marginBottom: "60px"
             }}>
-              {[
-                { label: "Years", value: counts.years, icon: "⭐" },
-                { label: "Events", value: counts.events, icon: "🎉" },
-                { label: "Clients", value: counts.clients, icon: "😊" }
-              ].map((stat, index) => (
+              {heroStats.map((stat, index) => (
                 <div key={index} className="card-hover" style={{
                   padding: "20px 40px",
                   background: "rgba(0,0,0,0.6)",
                   backdropFilter: "blur(10px)",
                   borderRadius: "20px",
-                  border: "1px solid rgba(255,215,0,0.3)"
+                  border: "1px solid rgba(255,215,0,0.3)",
+                  textAlign: "center"
                 }}>
-                  <span style={{ fontSize: "2rem", display: "block", marginBottom: "10px" }}>{stat.icon}</span>
-                  <div style={{ fontSize: "2.5rem", fontWeight: "bold", color: "gold" }}>{stat.value}+</div>
-                  <div style={{ color: "#ccc" }}>{stat.label}</div>
+                  <img src={stat.icon} alt={stat.label} style={{ width: "40px", height: "40px", marginBottom: "10px" }} />
+                  <div style={{ fontSize: "2rem", fontWeight: "bold", color: "gold" }}>{stat.value}+</div>
+                  <div style={{ color: "#ccc", fontSize: "0.9rem" }}>{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -627,45 +635,70 @@ const About = () => {
                   textAlign: "center",
                   border: "1px solid rgba(255,215,0,0.1)",
                   animation: `slideInUp 0.5s ease ${index * 0.1}s forwards`,
-                  opacity: 0
+                  opacity: 0,
+                  overflow: "hidden",
+                  position: "relative"
                 }}
               >
+                {/* Background Image */}
                 <div style={{
-                  width: "80px",
-                  height: "80px",
-                  margin: "0 auto 20px",
-                  background: "rgba(255,215,0,0.1)",
-                  borderRadius: "50%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center"
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  opacity: 0.1,
+                  zIndex: 0
                 }}>
                   <img 
-                    src={value.icon}
+                    src={value.image}
                     alt={value.title}
                     style={{
-                      width: "50px",
-                      height: "50px",
-                      objectFit: "contain"
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover"
                     }}
                   />
                 </div>
-                <h3 style={{
-                  fontSize: "1.5rem",
-                  color: "gold",
-                  marginBottom: "15px"
-                }}>
-                  {value.title}
-                </h3>
-                <p style={{ color: "#999", lineHeight: "1.6" }}>
-                  {value.desc}
-                </p>
+                
+                <div style={{ position: "relative", zIndex: 1 }}>
+                  <div style={{
+                    width: "80px",
+                    height: "80px",
+                    margin: "0 auto 20px",
+                    background: "rgba(255,215,0,0.1)",
+                    borderRadius: "50%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center"
+                  }}>
+                    <img 
+                      src={value.icon}
+                      alt={value.title}
+                      style={{
+                        width: "50px",
+                        height: "50px",
+                        objectFit: "contain"
+                      }}
+                    />
+                  </div>
+                  <h3 style={{
+                    fontSize: "1.5rem",
+                    color: "gold",
+                    marginBottom: "15px"
+                  }}>
+                    {value.title}
+                  </h3>
+                  <p style={{ color: "#999", lineHeight: "1.6" }}>
+                    {value.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Counters Grid */}
+        {/* Counters Grid with Images */}
         <div style={{
           maxWidth: "1200px",
           margin: "0 auto 80px",
@@ -679,14 +712,7 @@ const About = () => {
             gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
             gap: "40px"
           }}>
-            {[
-              { label: "Events Managed", value: counts.events, icon: "🎉" },
-              { label: "Happy Clients", value: counts.clients, icon: "😊" },
-              { label: "Team Members", value: counts.members, icon: "👥" },
-              { label: "Years Experience", value: counts.years, icon: "⭐" },
-              { label: "Satisfaction", value: counts.satisfaction, icon: "💯", suffix: "%" },
-              { label: "Partners", value: counts.partners, icon: "🤝", suffix: "+" }
-            ].map((counter, index) => (
+            {counterStats.map((counter, index) => (
               <div
                 key={index}
                 className="card-hover"
@@ -698,13 +724,13 @@ const About = () => {
                   border: "1px solid rgba(255,215,0,0.2)"
                 }}
               >
-                <div style={{ fontSize: "2.5rem", marginBottom: "15px" }}>{counter.icon}</div>
+                <img src={counter.icon} alt={counter.label} style={{ width: "50px", height: "50px", marginBottom: "15px" }} />
                 <div className="counter-number" style={{
                   fontSize: "2.5rem",
                   fontWeight: "bold",
                   marginBottom: "10px"
                 }}>
-                  {counter.value}{counter.suffix || "+"}
+                  {counter.value}{counter.suffix}
                 </div>
                 <div style={{ color: "#ccc", fontSize: "1rem" }}>{counter.label}</div>
               </div>
@@ -745,44 +771,67 @@ const About = () => {
                   overflow: "hidden"
                 }}
               >
-                <div className="floating-element" style={{
-                  width: "80px",
-                  height: "80px",
-                  margin: "0 auto 20px",
-                  background: "rgba(255,215,0,0.1)",
-                  borderRadius: "50%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center"
+                {/* Background Image */}
+                <div style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  opacity: 0.1,
+                  zIndex: 0
                 }}>
                   <img 
-                    src={milestone.icon}
+                    src={milestone.image}
                     alt={milestone.title}
                     style={{
-                      width: "50px",
-                      height: "50px",
-                      objectFit: "contain"
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover"
                     }}
                   />
                 </div>
-                <div style={{
-                  fontSize: "2rem",
-                  fontWeight: "bold",
-                  color: "gold",
-                  marginBottom: "10px"
-                }}>
-                  {milestone.year}
+                
+                <div style={{ position: "relative", zIndex: 1 }}>
+                  <div className="floating-element" style={{
+                    width: "80px",
+                    height: "80px",
+                    margin: "0 auto 20px",
+                    background: "rgba(255,215,0,0.1)",
+                    borderRadius: "50%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center"
+                  }}>
+                    <img 
+                      src={milestone.icon}
+                      alt={milestone.title}
+                      style={{
+                        width: "50px",
+                        height: "50px",
+                        objectFit: "contain"
+                      }}
+                    />
+                  </div>
+                  <div style={{
+                    fontSize: "2rem",
+                    fontWeight: "bold",
+                    color: "gold",
+                    marginBottom: "10px"
+                  }}>
+                    {milestone.year}
+                  </div>
+                  <h3 style={{
+                    fontSize: "1.3rem",
+                    color: "white",
+                    marginBottom: "10px"
+                  }}>
+                    {milestone.title}
+                  </h3>
+                  <p style={{ color: "#999" }}>
+                    {milestone.desc}
+                  </p>
                 </div>
-                <h3 style={{
-                  fontSize: "1.3rem",
-                  color: "white",
-                  marginBottom: "10px"
-                }}>
-                  {milestone.title}
-                </h3>
-                <p style={{ color: "#999" }}>
-                  {milestone.desc}
-                </p>
               </div>
             ))}
           </div>
@@ -846,6 +895,31 @@ const About = () => {
                     }}
                   />
                 </div>
+                
+                <div style={{
+                  width: "50px",
+                  height: "50px",
+                  margin: "-25px auto 15px",
+                  background: "rgba(0,0,0,0.8)",
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  border: "2px solid gold",
+                  position: "relative",
+                  zIndex: 1
+                }}>
+                  <img 
+                    src={member.icon}
+                    alt={member.role}
+                    style={{
+                      width: "30px",
+                      height: "30px",
+                      objectFit: "contain"
+                    }}
+                  />
+                </div>
+                
                 <h3 style={{ fontSize: "1.5rem", color: "white", marginBottom: "5px" }}>
                   {member.name}
                 </h3>
@@ -860,21 +934,21 @@ const About = () => {
                   justifyContent: "center",
                   gap: "15px"
                 }}>
-                  <a href={member.social.linkedin} className="social-icon" style={{
-                    color: "#0077b5",
-                    fontSize: "1.2rem",
+                  <a href={member.social.linkedin} style={{
                     textDecoration: "none"
-                  }}>📘</a>
+                  }}>
+                    <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="LinkedIn" style={{ width: "25px", height: "25px" }} />
+                  </a>
                   <a href={member.social.twitter} style={{
-                    color: "#1da1f2",
-                    fontSize: "1.2rem",
                     textDecoration: "none"
-                  }}>🐦</a>
+                  }}>
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" style={{ width: "25px", height: "25px" }} />
+                  </a>
                   <a href={member.social.email} style={{
-                    color: "gold",
-                    fontSize: "1.2rem",
                     textDecoration: "none"
-                  }}>✉️</a>
+                  }}>
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" style={{ width: "25px", height: "25px" }} />
+                  </a>
                 </div>
               </div>
             ))}
@@ -927,8 +1001,11 @@ const About = () => {
                     style={{
                       width: "100%",
                       height: "100%",
-                      objectFit: "cover"
+                      objectFit: "cover",
+                      transition: "transform 0.5s ease"
                     }}
+                    onMouseEnter={(e) => e.target.style.transform = "scale(1.1)"}
+                    onMouseLeave={(e) => e.target.style.transform = "scale(1)"}
                   />
                 </div>
                 
@@ -982,22 +1059,22 @@ const About = () => {
         }}>
           <div className="rotating-element" style={{
             position: "absolute",
-            width: "200px",
-            height: "200px",
+            width: "300px",
+            height: "300px",
             border: "2px solid rgba(255,215,0,0.1)",
             borderRadius: "50%",
-            left: "-50px",
-            top: "-50px"
+            left: "-100px",
+            top: "-100px"
           }}></div>
 
           <div className="rotating-element" style={{
             position: "absolute",
-            width: "150px",
-            height: "150px",
+            width: "200px",
+            height: "200px",
             border: "2px solid rgba(255,215,0,0.1)",
             borderRadius: "50%",
-            right: "-30px",
-            bottom: "-30px",
+            right: "-50px",
+            bottom: "-50px",
             animationDirection: "reverse"
           }}></div>
 
@@ -1038,7 +1115,7 @@ const About = () => {
 
             <Link to="/contact">
               <button className="glowing-element pulse-element" style={{
-                padding: "15px 50px",
+                padding: "18px 50px",
                 fontSize: "1.1rem",
                 background: "linear-gradient(135deg, gold, #ffa500)",
                 color: "black",
@@ -1046,7 +1123,8 @@ const About = () => {
                 borderRadius: "50px",
                 cursor: "pointer",
                 fontWeight: "bold",
-                transition: "all 0.3s ease"
+                transition: "all 0.3s ease",
+                boxShadow: "0 10px 30px rgba(255,215,0,0.3)"
               }}
               onMouseEnter={(e) => e.target.style.transform = "scale(1.1)"}
               onMouseLeave={(e) => e.target.style.transform = "scale(1)"}>

@@ -211,7 +211,7 @@ const Events = () => {
       fontFamily: "'Poppins', sans-serif",
       background: "#0a0a0a",
       color: "white",
-      overflow: "hidden",
+      overflowX: "hidden",
       position: "relative",
       minHeight: "100vh"
     }}>
@@ -299,6 +299,15 @@ const Events = () => {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
+          }
+
+          @keyframes zoomIn {
+            from {
+              transform: scale(1);
+            }
+            to {
+              transform: scale(1.1);
+            }
           }
 
           .floating-element {
@@ -409,6 +418,10 @@ const Events = () => {
             transform: scale(1.05);
             box-shadow: 0 10px 30px gold;
           }
+
+          .hero-background {
+            animation: zoomIn 20s ease-in-out infinite alternate;
+          }
         `}
       </style>
 
@@ -477,618 +490,750 @@ const Events = () => {
       {/* Main Content */}
       <div ref={sectionRef} style={{
         position: "relative",
-        zIndex: 1,
-        padding: "100px 20px 50px",
-        maxWidth: "1400px",
-        margin: "0 auto"
+        zIndex: 1
       }}>
-        {/* Hero Section */}
+        {/* Hero Section with Full Width Background Image */}
         <div style={{
-          textAlign: "center",
-          marginBottom: "60px",
-          transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
-          transition: "transform 0.1s ease-out"
-        }}>
-          {/* Animated Badge */}
-          <div className="floating-element" style={{
-            display: "inline-block",
-            padding: "10px 30px",
-            background: "rgba(255,215,0,0.1)",
-            border: "1px solid gold",
-            borderRadius: "40px",
-            marginBottom: "30px"
-          }}>
-            <span style={{ color: "gold", letterSpacing: "2px" }}>✦ OUR EVENTS ✦</span>
-          </div>
-
-          {/* Title */}
-          <h1 style={{
-            fontSize: "clamp(2.5rem, 8vw, 5rem)",
-            fontWeight: "800",
-            marginBottom: "20px",
-            lineHeight: "1.2"
-          }}>
-            Featured <span style={{
-              background: "linear-gradient(135deg, gold, #ffa500)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent"
-            }}>Events</span>
-          </h1>
-
-          {/* Description */}
-          <p style={{
-            maxWidth: "800px",
-            margin: "0 auto",
-            color: "#ccc",
-            fontSize: "1.2rem",
-            lineHeight: "1.8",
-            marginBottom: "40px"
-          }}>
-            Explore our portfolio of successful events. From intimate gatherings to grand celebrations, 
-            we create unforgettable experiences that leave lasting impressions.
-          </p>
-
-          {/* Stats */}
-          <div style={{
-            display: "flex",
-            justifyContent: "center",
-            gap: "50px",
-            flexWrap: "wrap"
-          }}>
-            <div className="card-hover" style={{ textAlign: "center" }}>
-              <div style={{ fontSize: "2rem", color: "gold" }}>500+</div>
-              <div style={{ color: "#999" }}>Events Done</div>
-            </div>
-            <div className="card-hover" style={{ textAlign: "center" }}>
-              <div style={{ fontSize: "2rem", color: "gold" }}>50+</div>
-              <div style={{ color: "#999" }}>Venues</div>
-            </div>
-            <div className="card-hover" style={{ textAlign: "center" }}>
-              <div style={{ fontSize: "2rem", color: "gold" }}>100%</div>
-              <div style={{ color: "#999" }}>Satisfaction</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Category Filters */}
-        <div style={{
+          position: "relative",
+          width: "100%",
+          minHeight: "100vh",
           display: "flex",
+          alignItems: "center",
           justifyContent: "center",
-          gap: "15px",
-          flexWrap: "wrap",
-          marginBottom: "50px"
+          overflow: "hidden"
         }}>
-          {categories.map(category => (
-            <button
-              key={category.id}
-              className={`category-btn ${selectedCategory === category.id ? 'active' : ''}`}
-              onClick={() => setSelectedCategory(category.id)}
-              style={{
-                padding: "12px 25px",
-                background: selectedCategory === category.id ? "gold" : "transparent",
-                color: selectedCategory === category.id ? "black" : "white",
-                border: "2px solid gold",
-                borderRadius: "40px",
-                cursor: "pointer",
-                fontSize: "1rem",
-                fontWeight: "500",
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-                transition: "all 0.3s ease"
-              }}
-            >
-              <span>{category.icon}</span>
-              <span>{category.label}</span>
-              <span style={{
-                background: selectedCategory === category.id ? "black" : "gold",
-                color: selectedCategory === category.id ? "gold" : "black",
-                padding: "2px 8px",
-                borderRadius: "20px",
-                fontSize: "0.8rem"
+          {/* Full Width Background Image */}
+          <div className="hero-background" style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            width: "100%",
+            height: "100%",
+            backgroundImage: "url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1920&h=1080&fit=crop')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            transform: `translate(${mousePosition.x * 0.1}px, ${mousePosition.y * 0.1}px) scale(1.05)`,
+            transition: "transform 0.1s ease-out",
+            animation: "zoomIn 20s ease-in-out infinite alternate"
+          }}>
+            {/* Dark Overlay */}
+            <div style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              width: "100%",
+              height: "100%",
+              background: "linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.85) 100%)"
+            }}></div>
+          </div>
+
+          {/* Hero Content */}
+          <div style={{
+            position: "relative",
+            zIndex: 2,
+            maxWidth: "1400px",
+            width: "100%",
+            margin: "0 auto",
+            textAlign: "center",
+            padding: "100px 20px",
+            transform: `translate(${mousePosition.x * 0.2}px, ${mousePosition.y * 0.2}px)`,
+            transition: "transform 0.1s ease-out"
+          }}>
+            {/* Hero Image */}
+            <div className="floating-element" style={{
+              width: "180px",
+              height: "180px",
+              margin: "0 auto 30px",
+              borderRadius: "50%",
+              overflow: "hidden",
+              border: "3px solid gold",
+              boxShadow: "0 0 50px rgba(255,215,0,0.5)",
+              background: "rgba(0,0,0,0.5)",
+              backdropFilter: "blur(10px)"
+            }}>
+              <img 
+                src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=400&h=400&fit=crop"
+                alt="Events"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover"
+                }}
+              />
+            </div>
+
+            {/* Animated Badge */}
+            <div className="floating-element" style={{
+              display: "inline-block",
+              padding: "10px 30px",
+              background: "rgba(255,215,0,0.2)",
+              backdropFilter: "blur(10px)",
+              border: "1px solid gold",
+              borderRadius: "40px",
+              marginBottom: "30px"
+            }}>
+              <span style={{ color: "gold", letterSpacing: "2px" }}>✦ OUR EVENTS ✦</span>
+            </div>
+
+            {/* Title */}
+            <h1 style={{
+              fontSize: "clamp(2.5rem, 8vw, 5rem)",
+              fontWeight: "800",
+              marginBottom: "20px",
+              lineHeight: "1.2",
+              textShadow: "2px 2px 4px rgba(0,0,0,0.5)"
+            }}>
+              Featured <span style={{
+                background: "linear-gradient(135deg, gold, #ffa500)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent"
+              }}>Events</span>
+            </h1>
+
+            {/* Description */}
+            <p style={{
+              maxWidth: "800px",
+              margin: "0 auto",
+              color: "#ccc",
+              fontSize: "1.2rem",
+              lineHeight: "1.8",
+              marginBottom: "40px",
+              textShadow: "1px 1px 2px rgba(0,0,0,0.5)"
+            }}>
+              Explore our portfolio of successful events. From intimate gatherings to grand celebrations, 
+              we create unforgettable experiences that leave lasting impressions.
+            </p>
+
+            {/* Stats */}
+            <div style={{
+              display: "flex",
+              justifyContent: "center",
+              gap: "50px",
+              flexWrap: "wrap"
+            }}>
+              <div className="card-hover" style={{ 
+                textAlign: "center",
+                background: "rgba(0,0,0,0.6)",
+                backdropFilter: "blur(10px)",
+                padding: "15px 30px",
+                borderRadius: "15px",
+                border: "1px solid rgba(255,215,0,0.3)"
               }}>
-                {category.count}
-              </span>
-            </button>
-          ))}
+                <div style={{ fontSize: "2rem", color: "gold" }}>500+</div>
+                <div style={{ color: "#999" }}>Events Done</div>
+              </div>
+              <div className="card-hover" style={{ 
+                textAlign: "center",
+                background: "rgba(0,0,0,0.6)",
+                backdropFilter: "blur(10px)",
+                padding: "15px 30px",
+                borderRadius: "15px",
+                border: "1px solid rgba(255,215,0,0.3)"
+              }}>
+                <div style={{ fontSize: "2rem", color: "gold" }}>50+</div>
+                <div style={{ color: "#999" }}>Venues</div>
+              </div>
+              <div className="card-hover" style={{ 
+                textAlign: "center",
+                background: "rgba(0,0,0,0.6)",
+                backdropFilter: "blur(10px)",
+                padding: "15px 30px",
+                borderRadius: "15px",
+                border: "1px solid rgba(255,215,0,0.3)"
+              }}>
+                <div style={{ fontSize: "2rem", color: "gold" }}>100%</div>
+                <div style={{ color: "#999" }}>Satisfaction</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Scroll Indicator */}
+          <div className="floating-element" style={{
+            position: "absolute",
+            bottom: "30px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            color: "white",
+            fontSize: "0.8rem",
+            letterSpacing: "2px",
+            writingMode: "vertical-rl",
+            opacity: 0.5,
+            zIndex: 2
+          }}>
+            SCROLL
+          </div>
         </div>
 
-        {/* Loading State */}
-        {loading ? (
+        {/* Events Section */}
+        <div style={{
+          maxWidth: "1400px",
+          margin: "0 auto",
+          padding: "80px 20px"
+        }}>
+          {/* Category Filters */}
           <div style={{
             display: "flex",
             justifyContent: "center",
-            alignItems: "center",
-            minHeight: "400px"
+            gap: "15px",
+            flexWrap: "wrap",
+            marginBottom: "50px"
           }}>
-            <div className="loading-spinner"></div>
-          </div>
-        ) : (
-          <>
-            {/* Featured Events Carousel */}
-            {selectedCategory === "all" && (
-              <div style={{
-                marginBottom: "60px"
-              }}>
-                <h2 style={{
-                  fontSize: "2rem",
-                  marginBottom: "30px",
+            {categories.map(category => (
+              <button
+                key={category.id}
+                className={`category-btn ${selectedCategory === category.id ? 'active' : ''}`}
+                onClick={() => setSelectedCategory(category.id)}
+                style={{
+                  padding: "12px 25px",
+                  background: selectedCategory === category.id ? "gold" : "transparent",
+                  color: selectedCategory === category.id ? "black" : "white",
+                  border: "2px solid gold",
+                  borderRadius: "40px",
+                  cursor: "pointer",
+                  fontSize: "1rem",
+                  fontWeight: "500",
                   display: "flex",
                   alignItems: "center",
-                  gap: "10px"
+                  gap: "8px",
+                  transition: "all 0.3s ease"
+                }}
+              >
+                <span>{category.icon}</span>
+                <span>{category.label}</span>
+                <span style={{
+                  background: selectedCategory === category.id ? "black" : "gold",
+                  color: selectedCategory === category.id ? "gold" : "black",
+                  padding: "2px 8px",
+                  borderRadius: "20px",
+                  fontSize: "0.8rem"
                 }}>
-                  <span className="glowing-element">✨</span>
-                  Featured Events
-                </h2>
+                  {category.count}
+                </span>
+              </button>
+            ))}
+          </div>
 
+          {/* Loading State */}
+          {loading ? (
+            <div style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              minHeight: "400px"
+            }}>
+              <div className="loading-spinner"></div>
+            </div>
+          ) : (
+            <>
+              {/* Featured Events Carousel */}
+              {selectedCategory === "all" && (
                 <div style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-                  gap: "30px"
+                  marginBottom: "60px"
                 }}>
-                  {featuredEvents.map((event, index) => (
-                    <div
-                      key={event.id}
-                      className="event-card"
-                      style={{
-                        background: "rgba(255,255,255,0.03)",
-                        borderRadius: "20px",
-                        overflow: "hidden",
-                        border: "2px solid gold",
-                        animation: `slideInUp 0.5s ease ${index * 0.1}s forwards`,
-                        opacity: 0,
-                        cursor: "pointer"
-                      }}
-                      onClick={() => setSelectedEvent(event)}
-                    >
-                      <div style={{
-                        height: "250px",
-                        overflow: "hidden"
-                      }}>
-                        <img
-                          src={event.image}
-                          alt={event.title}
-                          className="event-image"
-                          style={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover"
-                          }}
-                        />
+                  <h2 style={{
+                    fontSize: "2rem",
+                    marginBottom: "30px",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "10px"
+                  }}>
+                    <span className="glowing-element">✨</span>
+                    Featured Events
+                  </h2>
+
+                  <div style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+                    gap: "30px"
+                  }}>
+                    {featuredEvents.map((event, index) => (
+                      <div
+                        key={event.id}
+                        className="event-card"
+                        style={{
+                          background: "rgba(255,255,255,0.03)",
+                          borderRadius: "20px",
+                          overflow: "hidden",
+                          border: "2px solid gold",
+                          animation: `slideInUp 0.5s ease ${index * 0.1}s forwards`,
+                          opacity: 0,
+                          cursor: "pointer"
+                        }}
+                        onClick={() => setSelectedEvent(event)}
+                      >
+                        <div style={{
+                          height: "250px",
+                          overflow: "hidden"
+                        }}>
+                          <img
+                            src={event.image}
+                            alt={event.title}
+                            className="event-image"
+                            style={{
+                              width: "100%",
+                              height: "100%",
+                              objectFit: "cover"
+                            }}
+                          />
+                        </div>
+                        <div style={{
+                          padding: "25px",
+                          position: "relative"
+                        }}>
+                          <div style={{
+                            position: "absolute",
+                            top: "-15px",
+                            right: "20px",
+                            background: "gold",
+                            color: "black",
+                            padding: "5px 15px",
+                            borderRadius: "20px",
+                            fontSize: "0.9rem",
+                            fontWeight: "bold"
+                          }}>
+                            Featured ✦
+                          </div>
+                          <h3 style={{
+                            fontSize: "1.5rem",
+                            color: "gold",
+                            marginBottom: "10px"
+                          }}>
+                            {event.title}
+                          </h3>
+                          <p style={{
+                            color: "#ccc",
+                            marginBottom: "15px",
+                            lineHeight: "1.6"
+                          }}>
+                            {event.description.substring(0, 100)}...
+                          </p>
+                          <div style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            color: "#999",
+                            fontSize: "0.9rem"
+                          }}>
+                            <span>📅 {event.date}</span>
+                            <span>👥 {event.guests} guests</span>
+                          </div>
+                        </div>
                       </div>
-                      <div style={{
-                        padding: "25px",
-                        position: "relative"
-                      }}>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Events Grid */}
+              <div style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
+                gap: "30px",
+                marginBottom: "60px"
+              }}>
+                {filteredEvents.map((event, index) => (
+                  <div
+                    key={event.id}
+                    className="event-card"
+                    style={{
+                      background: "rgba(255,255,255,0.03)",
+                      borderRadius: "20px",
+                      overflow: "hidden",
+                      border: "1px solid rgba(255,215,0,0.2)",
+                      animation: `slideInUp 0.5s ease ${index * 0.1}s forwards`,
+                      opacity: 0,
+                      cursor: "pointer"
+                    }}
+                    onClick={() => setSelectedEvent(event)}
+                  >
+                    <div style={{
+                      height: "250px",
+                      overflow: "hidden",
+                      position: "relative"
+                    }}>
+                      <img
+                        src={event.image}
+                        alt={event.title}
+                        className="event-image"
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover"
+                        }}
+                      />
+                      {event.featured && (
                         <div style={{
                           position: "absolute",
-                          top: "-15px",
-                          right: "20px",
+                          top: "10px",
+                          right: "10px",
                           background: "gold",
                           color: "black",
                           padding: "5px 15px",
                           borderRadius: "20px",
-                          fontSize: "0.9rem",
+                          fontSize: "0.8rem",
                           fontWeight: "bold"
                         }}>
-                          Featured ✦
+                          Featured
                         </div>
-                        <h3 style={{
-                          fontSize: "1.5rem",
+                      )}
+                    </div>
+                    <div style={{
+                      padding: "25px"
+                    }}>
+                      <div style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        marginBottom: "15px"
+                      }}>
+                        <span style={{
+                          background: "rgba(255,215,0,0.1)",
+                          padding: "5px 15px",
+                          borderRadius: "20px",
                           color: "gold",
-                          marginBottom: "10px"
-                        }}>
-                          {event.title}
-                        </h3>
-                        <p style={{
-                          color: "#ccc",
-                          marginBottom: "15px",
-                          lineHeight: "1.6"
-                        }}>
-                          {event.description.substring(0, 100)}...
-                        </p>
-                        <div style={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                          color: "#999",
                           fontSize: "0.9rem"
                         }}>
-                          <span>📅 {event.date}</span>
-                          <span>👥 {event.guests} guests</span>
-                        </div>
+                          {categories.find(c => c.id === event.category)?.icon} {event.category}
+                        </span>
+                        <span style={{ color: "gold", fontSize: "1.2rem" }}>✦</span>
                       </div>
+                      <h3 style={{
+                        fontSize: "1.5rem",
+                        color: "white",
+                        marginBottom: "10px"
+                      }}>
+                        {event.title}
+                      </h3>
+                      <p style={{
+                        color: "#999",
+                        marginBottom: "15px",
+                        lineHeight: "1.6"
+                      }}>
+                        {event.description.substring(0, 120)}...
+                      </p>
+                      <div style={{
+                        display: "flex",
+                        gap: "15px",
+                        color: "#ccc",
+                        fontSize: "0.9rem",
+                        marginBottom: "15px"
+                      }}>
+                        <span>📅 {event.date}</span>
+                        <span>📍 {event.location}</span>
+                      </div>
+                      <button style={{
+                        width: "100%",
+                        padding: "12px",
+                        background: "transparent",
+                        color: "gold",
+                        border: "2px solid gold",
+                        borderRadius: "30px",
+                        cursor: "pointer",
+                        fontSize: "1rem",
+                        fontWeight: "500",
+                        transition: "all 0.3s ease"
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.background = "gold";
+                        e.target.style.color = "black";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.background = "transparent";
+                        e.target.style.color = "gold";
+                      }}>
+                        View Details
+                      </button>
                     </div>
-                  ))}
+                  </div>
+                ))}
+              </div>
+
+              {/* Event Stats */}
+              <div style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+                gap: "30px",
+                marginBottom: "60px",
+                padding: "40px",
+                background: "rgba(255,255,255,0.02)",
+                borderRadius: "30px"
+              }}>
+                <div style={{ textAlign: "center" }}>
+                  <div className="floating-element" style={{ fontSize: "3rem", color: "gold" }}>📅</div>
+                  <div style={{ fontSize: "2rem", fontWeight: "bold", color: "gold" }}>500+</div>
+                  <div style={{ color: "#ccc" }}>Total Events</div>
+                </div>
+                <div style={{ textAlign: "center" }}>
+                  <div className="floating-element" style={{ fontSize: "3rem", color: "gold" }}>💍</div>
+                  <div style={{ fontSize: "2rem", fontWeight: "bold", color: "gold" }}>200+</div>
+                  <div style={{ color: "#ccc" }}>Weddings</div>
+                </div>
+                <div style={{ textAlign: "center" }}>
+                  <div className="floating-element" style={{ fontSize: "3rem", color: "gold" }}>🏢</div>
+                  <div style={{ fontSize: "2rem", fontWeight: "bold", color: "gold" }}>150+</div>
+                  <div style={{ color: "#ccc" }}>Corporate</div>
+                </div>
+                <div style={{ textAlign: "center" }}>
+                  <div className="floating-element" style={{ fontSize: "3rem", color: "gold" }}>🎂</div>
+                  <div style={{ fontSize: "2rem", fontWeight: "bold", color: "gold" }}>150+</div>
+                  <div style={{ color: "#ccc" }}>Parties</div>
                 </div>
               </div>
-            )}
 
-            {/* Events Grid */}
-            <div style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
-              gap: "30px",
-              marginBottom: "60px"
-            }}>
-              {filteredEvents.map((event, index) => (
-                <div
-                  key={event.id}
-                  className="event-card"
-                  style={{
-                    background: "rgba(255,255,255,0.03)",
-                    borderRadius: "20px",
-                    overflow: "hidden",
-                    border: "1px solid rgba(255,215,0,0.2)",
-                    animation: `slideInUp 0.5s ease ${index * 0.1}s forwards`,
-                    opacity: 0,
-                    cursor: "pointer"
-                  }}
-                  onClick={() => setSelectedEvent(event)}
-                >
+              {/* CTA Section */}
+              <div style={{
+                textAlign: "center",
+                padding: "80px 20px",
+                background: "linear-gradient(135deg, rgba(255,215,0,0.1), transparent)",
+                borderRadius: "50px",
+                position: "relative",
+                overflow: "hidden"
+              }}>
+                <div className="rotating-element" style={{
+                  position: "absolute",
+                  width: "300px",
+                  height: "300px",
+                  border: "2px solid rgba(255,215,0,0.1)",
+                  borderRadius: "50%",
+                  left: "-100px",
+                  top: "-100px"
+                }}></div>
+
+                <div className="rotating-element" style={{
+                  position: "absolute",
+                  width: "200px",
+                  height: "200px",
+                  border: "2px solid rgba(255,215,0,0.1)",
+                  borderRadius: "50%",
+                  right: "-50px",
+                  bottom: "-50px",
+                  animationDirection: "reverse"
+                }}></div>
+
+                <div style={{ position: "relative", zIndex: 1 }}>
                   <div style={{
-                    height: "250px",
+                    width: "120px",
+                    height: "120px",
+                    margin: "0 auto 20px",
+                    borderRadius: "50%",
                     overflow: "hidden",
-                    position: "relative"
+                    border: "2px solid gold"
                   }}>
-                    <img
-                      src={event.image}
-                      alt={event.title}
-                      className="event-image"
+                    <img 
+                      src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=200&h=200&fit=crop"
+                      alt="Event Planning"
                       style={{
                         width: "100%",
                         height: "100%",
                         objectFit: "cover"
                       }}
                     />
-                    {event.featured && (
-                      <div style={{
-                        position: "absolute",
-                        top: "10px",
-                        right: "10px",
-                        background: "gold",
-                        color: "black",
-                        padding: "5px 15px",
-                        borderRadius: "20px",
-                        fontSize: "0.8rem",
-                        fontWeight: "bold"
-                      }}>
-                        Featured
-                      </div>
-                    )}
                   </div>
-                  <div style={{
-                    padding: "25px"
+
+                  <h2 style={{
+                    fontSize: "2.5rem",
+                    marginBottom: "20px"
                   }}>
-                    <div style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      marginBottom: "15px"
-                    }}>
-                      <span style={{
-                        background: "rgba(255,215,0,0.1)",
-                        padding: "5px 15px",
-                        borderRadius: "20px",
-                        color: "gold",
-                        fontSize: "0.9rem"
-                      }}>
-                        {categories.find(c => c.id === event.category)?.icon} {event.category}
-                      </span>
-                      <span style={{ color: "gold", fontSize: "1.2rem" }}>✦</span>
-                    </div>
-                    <h3 style={{
-                      fontSize: "1.5rem",
-                      color: "white",
-                      marginBottom: "10px"
-                    }}>
-                      {event.title}
-                    </h3>
+                    Want to Feature Your <span style={{ color: "gold" }}>Event</span>?
+                  </h2>
+                  
+                  <p style={{
+                    color: "#ccc",
+                    fontSize: "1.2rem",
+                    maxWidth: "600px",
+                    margin: "0 auto 40px",
+                    lineHeight: "1.8"
+                  }}>
+                    Let us help you create an unforgettable experience for your next event
+                  </p>
+
+                  <Link to="/contact">
+                    <button className="glowing-element pulse-element" style={{
+                      padding: "18px 60px",
+                      fontSize: "1.2rem",
+                      background: "linear-gradient(135deg, gold, #ffa500)",
+                      color: "black",
+                      border: "none",
+                      borderRadius: "50px",
+                      cursor: "pointer",
+                      fontWeight: "bold",
+                      transition: "all 0.3s ease",
+                      boxShadow: "0 10px 30px rgba(255,215,0,0.3)"
+                    }}
+                    onMouseEnter={(e) => e.target.style.transform = "scale(1.1)"}
+                    onMouseLeave={(e) => e.target.style.transform = "scale(1)"}>
+                      Plan Your Event ✦
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </>
+          )}
+
+          {/* Event Detail Modal */}
+          {selectedEvent && (
+            <div style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: "rgba(0,0,0,0.9)",
+              zIndex: 1000,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "20px",
+              overflowY: "auto"
+            }}
+            onClick={() => setSelectedEvent(null)}>
+              <div className="modal" style={{
+                maxWidth: "900px",
+                width: "100%",
+                background: "#1a1a1a",
+                borderRadius: "30px",
+                padding: "40px",
+                position: "relative",
+                border: "2px solid gold"
+              }}
+              onClick={(e) => e.stopPropagation()}>
+                <button
+                  onClick={() => setSelectedEvent(null)}
+                  style={{
+                    position: "absolute",
+                    top: "20px",
+                    right: "20px",
+                    background: "gold",
+                    border: "none",
+                    width: "40px",
+                    height: "40px",
+                    borderRadius: "50%",
+                    fontSize: "1.5rem",
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center"
+                  }}
+                >
+                  ✕
+                </button>
+
+                <h2 style={{
+                  fontSize: "2.5rem",
+                  color: "gold",
+                  marginBottom: "20px"
+                }}>
+                  {selectedEvent.title}
+                </h2>
+
+                <div style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: "30px",
+                  marginBottom: "30px"
+                }}>
+                  <div>
+                    <img
+                      src={selectedEvent.image}
+                      alt={selectedEvent.title}
+                      style={{
+                        width: "100%",
+                        height: "300px",
+                        objectFit: "cover",
+                        borderRadius: "20px"
+                      }}
+                    />
+                  </div>
+                  <div>
                     <p style={{
-                      color: "#999",
-                      marginBottom: "15px",
-                      lineHeight: "1.6"
+                      color: "#ccc",
+                      fontSize: "1.1rem",
+                      lineHeight: "1.8",
+                      marginBottom: "20px"
                     }}>
-                      {event.description.substring(0, 120)}...
+                      {selectedEvent.description}
                     </p>
                     <div style={{
                       display: "flex",
-                      gap: "15px",
-                      color: "#ccc",
-                      fontSize: "0.9rem",
-                      marginBottom: "15px"
+                      flexDirection: "column",
+                      gap: "15px"
                     }}>
-                      <span>📅 {event.date}</span>
-                      <span>📍 {event.location}</span>
+                      <div style={{ color: "#999" }}>
+                        <span style={{ color: "gold" }}>📅 Date:</span> {selectedEvent.date}
+                      </div>
+                      <div style={{ color: "#999" }}>
+                        <span style={{ color: "gold" }}>📍 Location:</span> {selectedEvent.location}
+                      </div>
+                      <div style={{ color: "#999" }}>
+                        <span style={{ color: "gold" }}>👥 Guests:</span> {selectedEvent.guests}
+                      </div>
+                      <div style={{ color: "#999" }}>
+                        <span style={{ color: "gold" }}>🏷️ Category:</span> {selectedEvent.category}
+                      </div>
                     </div>
-                    <button style={{
-                      width: "100%",
-                      padding: "12px",
-                      background: "transparent",
-                      color: "gold",
-                      border: "2px solid gold",
-                      borderRadius: "30px",
-                      cursor: "pointer",
-                      fontSize: "1rem",
-                      fontWeight: "500",
-                      transition: "all 0.3s ease"
-                    }}
-                    onMouseEnter={(e) => {
-                      e.target.style.background = "gold";
-                      e.target.style.color = "black";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.target.style.background = "transparent";
-                      e.target.style.color = "gold";
-                    }}>
-                      View Details
-                    </button>
                   </div>
                 </div>
-              ))}
-            </div>
 
-            {/* Event Stats */}
-            <div style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-              gap: "30px",
-              marginBottom: "60px",
-              padding: "40px",
-              background: "rgba(255,255,255,0.02)",
-              borderRadius: "30px"
-            }}>
-              <div style={{ textAlign: "center" }}>
-                <div className="floating-element" style={{ fontSize: "3rem", color: "gold" }}>📅</div>
-                <div style={{ fontSize: "2rem", fontWeight: "bold", color: "gold" }}>500+</div>
-                <div style={{ color: "#ccc" }}>Total Events</div>
-              </div>
-              <div style={{ textAlign: "center" }}>
-                <div className="floating-element" style={{ fontSize: "3rem", color: "gold" }}>💍</div>
-                <div style={{ fontSize: "2rem", fontWeight: "bold", color: "gold" }}>200+</div>
-                <div style={{ color: "#ccc" }}>Weddings</div>
-              </div>
-              <div style={{ textAlign: "center" }}>
-                <div className="floating-element" style={{ fontSize: "3rem", color: "gold" }}>🏢</div>
-                <div style={{ fontSize: "2rem", fontWeight: "bold", color: "gold" }}>150+</div>
-                <div style={{ color: "#ccc" }}>Corporate</div>
-              </div>
-              <div style={{ textAlign: "center" }}>
-                <div className="floating-element" style={{ fontSize: "3rem", color: "gold" }}>🎂</div>
-                <div style={{ fontSize: "2rem", fontWeight: "bold", color: "gold" }}>150+</div>
-                <div style={{ color: "#ccc" }}>Parties</div>
-              </div>
-            </div>
-
-            {/* CTA Section */}
-            <div style={{
-              textAlign: "center",
-              padding: "80px 20px",
-              background: "linear-gradient(135deg, rgba(255,215,0,0.1), transparent)",
-              borderRadius: "50px",
-              position: "relative",
-              overflow: "hidden"
-            }}>
-              <div className="rotating-element" style={{
-                position: "absolute",
-                width: "300px",
-                height: "300px",
-                border: "2px solid rgba(255,215,0,0.1)",
-                borderRadius: "50%",
-                left: "-100px",
-                top: "-100px"
-              }}></div>
-
-              <div className="rotating-element" style={{
-                position: "absolute",
-                width: "200px",
-                height: "200px",
-                border: "2px solid rgba(255,215,0,0.1)",
-                borderRadius: "50%",
-                right: "-50px",
-                bottom: "-50px",
-                animationDirection: "reverse"
-              }}></div>
-
-              <div style={{ position: "relative", zIndex: 1 }}>
-                <h2 style={{
-                  fontSize: "2.5rem",
-                  marginBottom: "20px"
-                }}>
-                  Want to Feature Your <span style={{ color: "gold" }}>Event</span>?
-                </h2>
-                
-                <p style={{
-                  color: "#ccc",
-                  fontSize: "1.2rem",
-                  maxWidth: "600px",
-                  margin: "0 auto 40px",
-                  lineHeight: "1.8"
-                }}>
-                  Let us help you create an unforgettable experience for your next event
-                </p>
+                {selectedEvent.gallery && (
+                  <>
+                    <h3 style={{
+                      fontSize: "1.5rem",
+                      color: "white",
+                      marginBottom: "20px"
+                    }}>
+                      Event Gallery
+                    </h3>
+                    <div style={{
+                      display: "grid",
+                      gridTemplateColumns: "repeat(3, 1fr)",
+                      gap: "15px",
+                      marginBottom: "30px"
+                    }}>
+                      {selectedEvent.gallery.map((img, index) => (
+                        <img
+                          key={index}
+                          src={img}
+                          alt={`Gallery ${index + 1}`}
+                          className="gallery-image"
+                          style={{
+                            width: "100%",
+                            height: "150px",
+                            objectFit: "cover",
+                            borderRadius: "10px",
+                            cursor: "pointer"
+                          }}
+                        />
+                      ))}
+                    </div>
+                  </>
+                )}
 
                 <Link to="/contact">
-                  <button className="glowing-element pulse-element" style={{
-                    padding: "18px 60px",
-                    fontSize: "1.2rem",
-                    background: "linear-gradient(135deg, gold, #ffa500)",
+                  <button style={{
+                    width: "100%",
+                    padding: "15px",
+                    background: "gold",
                     color: "black",
                     border: "none",
-                    borderRadius: "50px",
-                    cursor: "pointer",
+                    borderRadius: "30px",
+                    fontSize: "1.1rem",
                     fontWeight: "bold",
-                    transition: "all 0.3s ease",
-                    boxShadow: "0 10px 30px rgba(255,215,0,0.3)"
+                    cursor: "pointer",
+                    transition: "all 0.3s ease"
                   }}
-                  onMouseEnter={(e) => e.target.style.transform = "scale(1.1)"}
+                  onMouseEnter={(e) => e.target.style.transform = "scale(1.02)"}
                   onMouseLeave={(e) => e.target.style.transform = "scale(1)"}>
-                    Plan Your Event ✦
+                    Book Similar Event ✦
                   </button>
                 </Link>
               </div>
             </div>
-          </>
-        )}
-
-        {/* Event Detail Modal */}
-        {selectedEvent && (
-          <div style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: "rgba(0,0,0,0.9)",
-            zIndex: 1000,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            padding: "20px",
-            overflowY: "auto"
-          }}
-          onClick={() => setSelectedEvent(null)}>
-            <div className="modal" style={{
-              maxWidth: "900px",
-              width: "100%",
-              background: "#1a1a1a",
-              borderRadius: "30px",
-              padding: "40px",
-              position: "relative",
-              border: "2px solid gold"
-            }}
-            onClick={(e) => e.stopPropagation()}>
-              <button
-                onClick={() => setSelectedEvent(null)}
-                style={{
-                  position: "absolute",
-                  top: "20px",
-                  right: "20px",
-                  background: "gold",
-                  border: "none",
-                  width: "40px",
-                  height: "40px",
-                  borderRadius: "50%",
-                  fontSize: "1.5rem",
-                  cursor: "pointer",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center"
-                }}
-              >
-                ✕
-              </button>
-
-              <h2 style={{
-                fontSize: "2.5rem",
-                color: "gold",
-                marginBottom: "20px"
-              }}>
-                {selectedEvent.title}
-              </h2>
-
-              <div style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: "30px",
-                marginBottom: "30px"
-              }}>
-                <div>
-                  <img
-                    src={selectedEvent.image}
-                    alt={selectedEvent.title}
-                    style={{
-                      width: "100%",
-                      height: "300px",
-                      objectFit: "cover",
-                      borderRadius: "20px"
-                    }}
-                  />
-                </div>
-                <div>
-                  <p style={{
-                    color: "#ccc",
-                    fontSize: "1.1rem",
-                    lineHeight: "1.8",
-                    marginBottom: "20px"
-                  }}>
-                    {selectedEvent.description}
-                  </p>
-                  <div style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "15px"
-                  }}>
-                    <div style={{ color: "#999" }}>
-                      <span style={{ color: "gold" }}>📅 Date:</span> {selectedEvent.date}
-                    </div>
-                    <div style={{ color: "#999" }}>
-                      <span style={{ color: "gold" }}>📍 Location:</span> {selectedEvent.location}
-                    </div>
-                    <div style={{ color: "#999" }}>
-                      <span style={{ color: "gold" }}>👥 Guests:</span> {selectedEvent.guests}
-                    </div>
-                    <div style={{ color: "#999" }}>
-                      <span style={{ color: "gold" }}>🏷️ Category:</span> {selectedEvent.category}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {selectedEvent.gallery && (
-                <>
-                  <h3 style={{
-                    fontSize: "1.5rem",
-                    color: "white",
-                    marginBottom: "20px"
-                  }}>
-                    Event Gallery
-                  </h3>
-                  <div style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(3, 1fr)",
-                    gap: "15px",
-                    marginBottom: "30px"
-                  }}>
-                    {selectedEvent.gallery.map((img, index) => (
-                      <img
-                        key={index}
-                        src={img}
-                        alt={`Gallery ${index + 1}`}
-                        className="gallery-image"
-                        style={{
-                          width: "100%",
-                          height: "150px",
-                          objectFit: "cover",
-                          borderRadius: "10px",
-                          cursor: "pointer"
-                        }}
-                      />
-                    ))}
-                  </div>
-                </>
-              )}
-
-              <Link to="/contact">
-                <button style={{
-                  width: "100%",
-                  padding: "15px",
-                  background: "gold",
-                  color: "black",
-                  border: "none",
-                  borderRadius: "30px",
-                  fontSize: "1.1rem",
-                  fontWeight: "bold",
-                  cursor: "pointer",
-                  transition: "all 0.3s ease"
-                }}
-                onMouseEnter={(e) => e.target.style.transform = "scale(1.02)"}
-                onMouseLeave={(e) => e.target.style.transform = "scale(1)"}>
-                  Book Similar Event ✦
-                </button>
-              </Link>
-            </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );

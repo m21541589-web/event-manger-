@@ -868,21 +868,21 @@ const Home = () => {
               {[
                 {
                   quote: "Elite Events transformed our vision into reality. Every detail was perfect!",
-                  author: "Sarah & Michael",
+                  author: "Ajmal Hassan",
                   role: "Wedding Clients",
                   rating: 5,
                   image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=300&fit=crop"
                 },
                 {
                   quote: "The most professional event team we've ever worked with. Exceptional service!",
-                  author: "David Chen",
+                  author: "Rai Mudassar",
                   role: "CEO, TechCorp",
                   rating: 5,
                   image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=300&fit=crop"
                 },
                 {
                   quote: "Our corporate gala was a massive success thanks to their expertise.",
-                  author: "Emma Watson",
+                  author: "Nawazish Ali",
                   role: "Event Director",
                   rating: 5,
                   image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=400&h=300&fit=crop"
